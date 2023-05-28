@@ -28,34 +28,20 @@ function BookList({ artist, heading, setPlaySong }) {
   );
 // console.log("books",books)
 
-
   return books?.length > 0 ? (
     <Box className={style.BookList} mb="-40px">
 
-      <Flex
-        justify={"space-between"}
-      >
-        <Button
-          variant={"unstyled"}
-          color={"#fff"}
-          size="sm"
-          onClick={handleToggle}
-          mt="1rem"
-        >
-          Show {show ? "Less" : "More"}
-        </Button>
-      </Flex>
-      {/* <Collapse startingHeight={250} in={show}> */}
         <Grid
           className={style.listContainer}
           flexWrap="wrap"
+          p={"80px 80px"}
           gridTemplateColumns={[
             "repeat(1, 1fr)",
             "repeat(2, 1fr)",
             "repeat(3, 1fr)",
             "repeat(4, 1fr)",
             "repeat(5, 1fr)",
-            "repeat(5, 1fr)",
+            "repeat(6, 1fr)",
           ]}
           gap="20px"
         >
@@ -64,7 +50,6 @@ function BookList({ artist, heading, setPlaySong }) {
             return <CardCom key={index} book={book} />;
           })}
         </Grid>
-      {/* </Collapse> */}
     </Box>
   ) : (
     // ! Skeleton to display before page load

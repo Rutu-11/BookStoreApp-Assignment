@@ -12,7 +12,7 @@ import {
 import { FaCaretRight } from "react-icons/fa";
 import style from "./Card.module.css";
 
-
+import {useNavigate} from 'react-router-dom'
 import {
   Modal,
   ModalOverlay,
@@ -22,11 +22,14 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Flex
+  Flex,
+  useToast
 } from '@chakra-ui/react'
 
 
 function CardCom({ book }) {
+  const toast = useToast();
+  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   let src = book.volumeInfo.imageLinks?.thumbnail;
   const author = book.volumeInfo.authors;
@@ -35,7 +38,14 @@ function CardCom({ book }) {
     let cart = JSON.parse(localStorage.getItem('book-list')) || [];
     cart.push(book);
     localStorage.setItem("book-list", JSON.stringify(cart));
-    
+    toast({
+      title: 'Item Added to cart.',
+      description: "Redirecting to home page.",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+    navigate('/cart')
   }
   return (
     <>

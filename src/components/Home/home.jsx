@@ -1,12 +1,10 @@
 import {useState} from 'react';
 import Navbar from '../CommonComp/Navbar/Navbar';
-import SideComp from '../CommonComp/Sidebar/sideComponents';
 import {  Box ,Button} from "@chakra-ui/react";
 import styles from "./home.module.css";
 import BookList from "./HomeComponents/BookList";
 import AnimatedPages from "../../AinmatedPages";
 import { useColorMode, useColorModeValue } from '@chakra-ui/react' 
-import Sidebar from '../CommonComp/Sidebar/sidebar';
 
 
 const Home = () => {

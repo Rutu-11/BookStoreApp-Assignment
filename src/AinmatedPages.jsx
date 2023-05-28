@@ -15,7 +15,7 @@ const AnimatedPages = ({ children }) => {
       // opacity= 1
       // transform= "none"
       width= "100%"
-      height= '150vh'
+      height= '100vh'
       background= 'black'
     >
       {children}
