@@ -8,18 +8,18 @@ function BookListing() {
   useEffect(() => {
     dispatch(fetchBooks("Novel"));
   }, [dispatch]);
-  const data = useSelector(
-    (state) => state.book.books
+  const {loading,books} = useSelector(
+    (state) => state.book
   );
-  const books =[]
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  // const books =[]
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   
   // if (error) {
   //   return <div>Error: {error}</div>;
   // }
-  console.log('data',data)
+  console.log('data',books)
   return (
     <div>
       {/* Render your books */}
@@ -27,8 +27,8 @@ function BookListing() {
         books.map((book)=>{
             return(
                 <div key={book.key}>
-                    <h2>{book.title}</h2>
-                    <p>{book.author_name}</p>
+                    <h2>{book.volumeInfo.title}</h2>
+                    <img src={book.volumeInfo.imageLinks.smallThumbnail}/>
                     {/* Render other book details */}
                 </div>
             )

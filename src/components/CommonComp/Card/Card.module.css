@@ -1,0 +1,36 @@
+
+.cardContainer{
+    
+    padding: 15px;
+    margin: 10px 5px;
+    background-color: #181818;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+
+}
+.cardContainer:hover{
+    background-color:#252525;
+    transition: 500ms linear; 
+     transform: scale(1.1);
+    
+}
+
+.cardContainer img{
+    width: 100%;
+    height:65%;
+    border-radius:6px;
+    margin-bottom: 10px;
+}
+
+.viewButtonDiv{
+    position: relative;
+    margin-top: 10px;
+}
+
+  .songDesc{
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
