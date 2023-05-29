@@ -67,3 +67,24 @@ nav{
     border-radius:50%;
     margin-right:10px;
 }
+@media only screen and (max-width: 800px) {
+    .my_shop{
+        display: none;
+        
+    }
+    .nav_box{
+        display: flex;
+        align-items:center
+    }
+    .nav_box a, .cart a:nth-child(1), .login a, .home a:nth-child(1){
+        font-size: 1rem;
+        margin-top: 25px;
+    }
+    .search>input{
+        width: 80%;
+        height: 20px;
+    }
+    .userImg{
+        width: 10%;
+    }
+  }
