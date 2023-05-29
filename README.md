@@ -1,4 +1,4 @@
-#Interactive Bookstore Assignment
+# Interactive Bookstore Assignment
 It is an interactive Bookstore application developed using ReactJS. The project aims to provide users with a seamless experience to browse, search, and purchase books. It incorporates various pages/components such as Home, Book Listing, Book Details, Shopping Cart, and Checkout pages.
 
 The ReactJS Full Stack Assignment utilizes several technologies and features to develop the interactive Bookstore application. Here are the key tech stacks and their features:
