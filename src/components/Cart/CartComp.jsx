@@ -76,7 +76,7 @@ const toast = useToast()
           )}
         <div className='total'>
             <span>Total Price of your Cart</span>
-            <span>Rs - {price}</span>
+            <span>Rs : {price}</span>
         </div>
         <div className='checkout'>
             <button onClick={()=>handleCheckout()}>Checkout</button>

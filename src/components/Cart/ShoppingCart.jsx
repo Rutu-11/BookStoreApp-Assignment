@@ -25,7 +25,8 @@ function ShoppingCartComp() {
 		// cart = JSON.parse(localStorage.getItem("book-list")) || [];
 		let ind = -1;
 		cart.forEach((data, index)=>{
-			if (data.id === item.id)
+      // console.log('id',data.book.title,item.book.title)
+			if (data.book.title === item.book.title)
 				ind = index;
 		});
 		const tempArr = cart;

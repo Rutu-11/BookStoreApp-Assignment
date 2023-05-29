@@ -3,24 +3,27 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BookContext } from "../../../Context/ContextProvider";
 
-
 const Navbar = () => {
-
   const { size, setSearch, addToCart } = useContext(BookContext);
   const [C_size, setC_size] = useState(0);
-  const [show,setShow]=useState(false);
+  const [show, setShow] = useState(false);
+  const { name, email, picture,given_name } =
+    JSON.parse(localStorage.getItem("userDetail")) || {};
+
   function handleInput(e) {
     let id = setInterval(() => {
       clearInterval(id);
       setSearch(e.target.value);
     }, 1000);
   }
- 
 
+  
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("book-list")) || [];
     setC_size(cart.length);
-  }, [size, C_size,addToCart]);
+  }, [size, C_size, addToCart]);
+
+  
   return (
     <nav>
       <div className="nav_box">
@@ -40,11 +43,16 @@ const Navbar = () => {
           <span>{}</span>
         </div>
 
-       <div className="login" >
-        <Link to={'/signin'}>Signin</Link>
-        
-       </div>
-       
+        <div className="login">
+          {name ? (
+            <>
+            <img className="userImg" src={picture} alt={name} />
+            <span>{given_name}</span>
+            </>
+          ) : (
+            <Link to={"/signin"}>Signin</Link>
+          )}
+        </div>
       </div>
     </nav>
   );
