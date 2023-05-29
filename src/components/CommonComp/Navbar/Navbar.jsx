@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BookContext } from "../../../Context/ContextProvider";
-import Signin from "../Modal/Signin";
 
 
 const Navbar = () => {
@@ -41,9 +40,9 @@ const Navbar = () => {
           <span>{}</span>
         </div>
 
-       <div className="login" onClick={()=>setShow(true)} >
-        Signin
-        <Signin show={show}  onClose={()=>setShow(false)} />
+       <div className="login" >
+        <Link to={'/signin'}>Signin</Link>
+        
        </div>
        
       </div>
