@@ -43,7 +43,7 @@ function BookList({ artist, heading, setPlaySong }) {
             "repeat(5, 1fr)",
             "repeat(6, 1fr)",
           ]}
-          gap="20px"
+          gap="30px"
         >
           {books.map((book, index) => {
             // console.log("book",book)

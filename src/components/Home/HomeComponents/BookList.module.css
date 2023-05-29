@@ -1,11 +1,11 @@
-.SpotifyPlaylist{
+.BookList{
     padding: 15px 40px 10px 40px ;
     background-color: #121212;
     /* margin-top: 45px; */
     bottom: 0;
    
 }
-.SpotifyPlaylist h2{
+.BookList h2{
     color:#ffffff;
     font-size: 22px;
     margin-bottom: 20px;

@@ -8,20 +8,14 @@ import { useColorMode, useColorModeValue } from '@chakra-ui/react'
 
 
 const Home = () => {
-  const [playSong, setPlaySong] = useState({
-    songUrl: "",
-    playSong: false,
-    img: "",
-    songName: "",
-    singer: "",
-  });
- 
+const [size, setSize] = useState(0)
+const [show, setShow] = useState()
   return (
     <>
     <AnimatedPages>
       <Box  className={styles.homeContainer}>
       
-        <Navbar bgColor="black" />
+        {/* <Navbar  /> */}
         <AnimatedPages>
         <BookList artist={'Motivational'} heading={"Motivational Stories"}  />
         

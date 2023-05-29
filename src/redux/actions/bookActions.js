@@ -29,11 +29,11 @@ export const fetchBooksFailure = (error) => {
 // Thunk function
 export const fetchBooks = (title) => {
   return (dispatch) => {
-    console.log("title",title)
+    // console.log("title",title)
     dispatch(fetchBooksRequest());
     axios.get('https://www.googleapis.com/books/v1/volumes?q='+title+'&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'+'&maxResults=40')
       .then(response => {
-        console.log('response',response)
+        // console.log('response',response)
         const books = response.data.items
         dispatch(fetchBooksSuccess(books));
       })
