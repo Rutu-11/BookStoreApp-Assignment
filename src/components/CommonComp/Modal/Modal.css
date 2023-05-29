@@ -35,9 +35,30 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
+
 }
-.info h1{
+.login-div{
+    /* border:2px solid green; */
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    height:300px;
+    align-items:center;
+}
+.login-div button{
+    width: 50%;
+    margin: auto;
+}
+.info h1,.login-div h1{
     color:orangered;
+}
+.login-div p{
+    color:navy;
+    font-size: x-small;
+    width: 60%;
+    margin: auto;
+    text-align: center;
 }
 .overlay-inner .inner-box img{
     margin-right: 20px;

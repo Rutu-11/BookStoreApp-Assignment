@@ -32,6 +32,12 @@ nav{
     font-size: 2rem;
     color: white;
 }
+.login{
+    font-family: cursive;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
 .cart a:nth-child(1){
     font-size: 2rem;
     color: white;

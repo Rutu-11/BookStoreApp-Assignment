@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BookContext } from "../../../Context/ContextProvider";
+import Signin from "../Modal/Signin";
 
-const Navbar = ({ setShow }) => {
+
+const Navbar = () => {
 
   const { size, setSearch, addToCart } = useContext(BookContext);
   const [C_size, setC_size] = useState(0);
-
-
+  const [show,setShow]=useState(false);
   function handleInput(e) {
     let id = setInterval(() => {
       clearInterval(id);
@@ -37,8 +38,14 @@ const Navbar = ({ setShow }) => {
           <Link to="/cart">
             <i className="fas fa-cart-plus"></i>
           </Link>
-          <span>{C_size}</span>
+          <span>{}</span>
         </div>
+
+       <div className="login" onClick={()=>setShow(true)} >
+        Signin
+        <Signin show={show}  onClose={()=>setShow(false)} />
+       </div>
+       
       </div>
     </nav>
   );

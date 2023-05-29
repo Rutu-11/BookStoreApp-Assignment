@@ -8,10 +8,11 @@ import store from './redux/store';
 import {BrowserRouter} from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react';
 import BookContextProvider from './Context/ContextProvider';
-
+import { GoogleOAuthProvider } from "@react-oauth/google";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <GoogleOAuthProvider clientId="178045007315-9et36biko37lslr4ff2nituqv0b3k7lv.apps.googleusercontent.com" >
     <ChakraProvider>
     <BrowserRouter>
     <Provider store={store}>
@@ -21,6 +22,7 @@ root.render(
     </Provider>
     </BrowserRouter>
     </ChakraProvider>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
 
