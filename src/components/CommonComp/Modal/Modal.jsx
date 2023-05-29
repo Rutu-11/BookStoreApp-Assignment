@@ -1,7 +1,8 @@
-import react from 'react';
+import react, { useContext } from 'react';
 import "./Modal.css"
-const Modal=({show,item,onClose,addToCart})=>{
-//   const author = item.volumeInfo.authors;
+import { BookContext } from '../../../Context/ContextProvider';
+const Modal=({show,item,onClose})=>{
+const {addToCart} = useContext(BookContext)
     if(!show)
     {
         return null;

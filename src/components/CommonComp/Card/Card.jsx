@@ -15,14 +15,6 @@ import style from "./Card.module.css";
 import {useNavigate} from 'react-router-dom'
 import Modal from "../Modal/Modal";
 import {
-  // Modal,
-  // ModalOverlay,
-  // ModalContent,
-  // ModalHeader,
-  // ModalFooter,
-  // ModalBody,
-  // ModalCloseButton,
-  // useDisclosure,
   Flex,
   useToast
 } from '@chakra-ui/react'
@@ -30,49 +22,13 @@ import {
 
 function CardCom({ book }) {
   const toast = useToast();
-  const navigate = useNavigate()
   const [show,setShow]=useState(false);
     const [bookItem,setItem]=useState();
   let src = book.volumeInfo.imageLinks?.thumbnail;
   const author = book.volumeInfo.authors;
 
 
-  const addToCart=(book)=>{
-    
-    let cart = JSON.parse(localStorage.getItem('book-list')) || [];
-    let isPresent = false;
-		cart.forEach((product)=>{
-      console.log('product',product.book.title)
-      console.log('book',book.volumeInfo.title)
-			if (book.volumeInfo.title === product.book.title){
-        isPresent= true
-      }
-			
-		})
-    if(isPresent){
-      toast({
-        title: 'Item Already in the cart.',
-        description: "Please add some other items.",
-        status:'warning',
-        duration: 3000,
-        isClosable: true,
-      })
-      return;
-    }
-    
-      let obj= {book:book.volumeInfo, quantity:1}
-      cart.push(obj);
-      localStorage.setItem("book-list", JSON.stringify(cart));
-      toast({
-        title: 'Item Added to cart.',
-        description: "Item added to cart contineu Shopping!.",
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-      })
-    
-    
-  }
+  
 
   return (
     <>
@@ -94,7 +50,7 @@ function CardCom({ book }) {
         
       </Box>
     </Box>
-    <Modal show={show} item={bookItem} onClose={()=>setShow(false)} addToCart={addToCart}/>
+    <Modal show={show} item={bookItem} onClose={()=>setShow(false)} />
 
 </>
   );

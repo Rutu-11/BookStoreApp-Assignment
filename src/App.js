@@ -6,17 +6,23 @@ import React,{useEffect, useState} from 'react';
 // import CheckoutPage from './components/Checkout';
 import AllRoutes from './components/Routes/AllRoutes.jsx'
 import Navbar from './components/CommonComp/Navbar/Navbar.jsx';
+import { useDispatch } from 'react-redux';
+import { fetchBooks } from './redux/actions/bookActions.js';
 
 function App() {
   const [show, setShow] = useState(true);
 	const [cart , setCart] = useState([]);
 	const [warning, setWarning] = useState(false);
 	const [size, setSize] = useState(0)
+	
+	// console.log("search", search)
+	const dispatch = useDispatch();
 	 let book = JSON.parse(localStorage.getItem("book-list")) || [];
 	 
 	 useEffect(()=>{
 		setSize(book.length)
 		setCart(book)
+		
 	 },[])
 	const handleClick = (item)=>{
 		let isPresent = false;

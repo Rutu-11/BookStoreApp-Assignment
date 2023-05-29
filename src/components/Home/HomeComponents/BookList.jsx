@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Flex,
   Heading,
@@ -12,17 +12,29 @@ import style from "./BookList.module.css";
 import CardCom from "../../CommonComp/Card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../../redux/actions/bookActions";
+import { BookContext } from "../../../Context/ContextProvider";
 
 function BookList({ artist, heading, setPlaySong }) {
+  const {search} = useContext(BookContext)
   const dispatch = useDispatch();
   const [data, setData] = React.useState([]);
   const [show, setShow] = React.useState(false);
-
+  // if(search){
+  //   dispatch(fetchBooks(artist));
+  // }
+  console.log(search,'search')
   const handleToggle = () => setShow(!show);
 
   useEffect(() => {
-    dispatch(fetchBooks(artist));
-  }, [dispatch]);
+    if(search){
+      dispatch(fetchBooks(search));
+      // return;
+    }
+    else{
+      dispatch(fetchBooks(artist));
+    }
+    
+  }, [dispatch,search]);
   const {loading,books} = useSelector(
     (state) => state.book
   );

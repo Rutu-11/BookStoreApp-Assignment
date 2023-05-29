@@ -44,7 +44,6 @@ function ShoppingCartComp() {
     <>
       <AnimatedPages>
         <Box className={styles.homeContainer}>
-          {/* <Navbar bgColor="black" /> */}
           <AnimatedPages>
             <ShoppingCart cart={cart} setCart={setCart} handleChange={handleChange} />
           </AnimatedPages>
